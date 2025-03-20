@@ -10,7 +10,7 @@ if($conexDB->connect_error){
     die();
 }
 
-echo "Conexión exitosa <br><br>";
+// echo "Conexión exitosa <br><br>";
 
 // $sqlSelect = "select * from estudiantes";
 // $resultadosSQL = $conexDB->query($sqlSelect);

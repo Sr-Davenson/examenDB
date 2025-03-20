@@ -19,18 +19,6 @@
                         <input type="number" name="edad" min="1" placeholder="ingresa tu edad" require>
                     </div>
                 </fieldset>
-                <button type="submit">Calcular</button>
-            </form>
-            <form action="area.php" method="post">
-                <fieldset>
-                    <legend>Arista del triangulo:</legend>
-                    <div>
-                        <label>Ingrese la base del triangulo</label>
-                        <input type="number" name="base" min="0">
-                        <label>Ingrese la altura del triangulo</label>
-                        <input type="number" name="altura" min="0">
-                    </div>
-                </fieldset>
                 <button type="submit">Enviar</button>
             </form>
             <a href="index.php">Volver</a>
