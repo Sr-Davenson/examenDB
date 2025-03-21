@@ -3,14 +3,11 @@
 
     if (isset($_POST['nombre']) && !empty($_POST['nombre'])) {
         $nombre = $_POST['nombre'];
-
-        // Uso de declaración preparada para evitar inyección SQL
         $sql = "DELETE FROM personas WHERE nombre = ?";
         $stmt = $conexDB->prepare($sql);
 
         if ($stmt) {
-            // Vinculamos el parámetro
-            $stmt->bind_param("s", $nombre); // Tipo string
+            $stmt->bind_param("s", $nombre);
             if ($stmt->execute()) {
                 echo "<br> Eliminado exitosamente <br>";
             } else {

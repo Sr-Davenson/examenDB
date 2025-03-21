@@ -5,14 +5,11 @@
         $nombreNew = $_POST['nombreNew'];
         $emailNew = $_POST['emailNew'];
         $edadNew = $_POST['edadNew'];
-
         include "bases.php";
 
-        // Validar que los valores no estén vacíos
         if (!empty($nombreDB) && !empty($nombreNew) && !empty($emailNew) && !empty($edadNew)) {
             $sql = "UPDATE personas SET nombre = ?, email = ?, edad = ? WHERE nombre = ?";
             $stmt = $conexDB->prepare($sql);
-
             if ($stmt) {
                 $stmt->bind_param("ssis", $nombreNew, $emailNew, $edadNew, $nombreDB);
                 if ($stmt->execute()) {
@@ -31,7 +28,6 @@
         echo "<br>Error: Datos incompletos recibidos del formulario.<br>";
     }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="es">
