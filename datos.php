@@ -9,7 +9,6 @@
     <?php
         include "bases.php";
         $sqlSelect = "select * from personas";
-        $mensaje = '';
         $resultadosSQL = $conexDB->query($sqlSelect);
             if($resultadosSQL->num_rows>0){
                 while ($row = $resultadosSQL->fetch_assoc()) {
@@ -17,7 +16,6 @@
                     $email = $row['email'];
                     $edad = $row['edad'];
                     echo"$nombre, $email, $edad <br>";
-                    // $mensaje = "$nombre, $email, $edad <br>";
                 }
             } else {
                 echo "<br>No hay registros :(<br>";

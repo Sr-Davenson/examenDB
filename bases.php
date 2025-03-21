@@ -1,9 +1,8 @@
 <?php
-$hostDB = "localhost"; //ruta
-$userDB = "root"; //usuario
-$pwdDB = ""; //contraseña
-$nameDB = "examen_pr2"; //nombreBaseDeDatos
-// $portDB = "3306"; //puertoBase
+$hostDB = "localhost";
+$userDB = "root";
+$pwdDB = "";
+$nameDB = "examen_pr2";
 $conexDB = new mysqli($hostDB, $userDB, $pwdDB,$nameDB);
 if($conexDB->connect_error){
     echo $conexDB->connect_error;
