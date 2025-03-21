@@ -9,15 +9,15 @@
 
         if (!empty($nombreDB) && !empty($nombreNew) && !empty($emailNew) && !empty($edadNew)) {
             $sql = "UPDATE personas SET nombre = ?, email = ?, edad = ? WHERE nombre = ?";
-            $stmt = $conexDB->prepare($sql);
-            if ($stmt) {
-                $stmt->bind_param("ssis", $nombreNew, $emailNew, $edadNew, $nombreDB);
-                if ($stmt->execute()) {
+            $sqlRespuesta = $conexDB->prepare($sql);
+            if ($sqlRespuesta) {
+                $sqlRespuesta->bind_param("ssis", $nombreNew, $emailNew, $edadNew, $nombreDB);
+                if ($sqlRespuesta->execute()) {
                     echo "<br> Actualizado exitosamente <br>";
                 } else {
-                    echo "<br>No fue posible actualizar la información: " . $stmt->error . "<br>";
+                    echo "<br>No fue posible actualizar la información: " . $sqlRespuesta->error . "<br>";
                 }
-                $stmt->close();
+                $sqlRespuesta->close();
             } else {
                 echo "<br>Error al preparar la declaración SQL: " . $conexDB->error . "<br>";
             }

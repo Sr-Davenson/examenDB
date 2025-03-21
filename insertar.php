@@ -7,17 +7,16 @@
     include "bases.php";
 
     $sql = "INSERT INTO personas (nombre, email, edad) VALUES (?, ?, ?)";
-    $stmt = $conexDB->prepare($sql);
+    $sqlRespuesta = $conexDB->prepare($sql);
 
-    if ($stmt) {
-        // Vinculamos los parámetros
-        $stmt->bind_param("ssi", $nombreDB, $emailDB, $edadDB);
-        if ($stmt->execute()) {
+    if ($sqlRespuesta) {
+        $sqlRespuesta->bind_param("ssi", $nombreDB, $emailDB, $edadDB);
+        if ($sqlRespuesta->execute()) {
             echo "<br> Guardado exitosamente <br>";
         } else {
             echo "<br>No fue posible guardar la información: " . $stmt->error . "<br>";
         }
-        $stmt->close();
+        $sqlRespuesta->close();
     } else {
         echo "<br>Error al preparar la declaración SQL: " . $conexDB->error . "<br>";
     }

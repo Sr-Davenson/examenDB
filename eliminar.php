@@ -4,16 +4,16 @@
     if (isset($_POST['nombre']) && !empty($_POST['nombre'])) {
         $nombre = $_POST['nombre'];
         $sql = "DELETE FROM personas WHERE nombre = ?";
-        $stmt = $conexDB->prepare($sql);
+        $sqlRespuesta = $conexDB->prepare($sql);
 
-        if ($stmt) {
-            $stmt->bind_param("s", $nombre);
-            if ($stmt->execute()) {
+        if ($sqlRespuesta) {
+            $sqlRespuesta->bind_param("s", $nombre);
+            if ($sqlRespuesta->execute()) {
                 echo "<br> Eliminado exitosamente <br>";
             } else {
-                echo "<br>No fue posible eliminar la información: " . $stmt->error . "<br>";
+                echo "<br>No fue posible eliminar la información: " . $sqlRespuesta->error . "<br>";
             }
-            $stmt->close();
+            $sqlRespuesta->close();
         } else {
             echo "<br>Error al preparar la consulta SQL: " . $conexDB->error . "<br>";
         }

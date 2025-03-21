@@ -1,11 +1,15 @@
+<?php
+function calculo(){
+    
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Registros</title>
+    <title>Calcular</title>
 </head>
 <body>
-    <h1>Registros</h1>
     <?php
         include "bases.php";
         $sqlSelect = "SELECT * FROM personas";
@@ -25,6 +29,5 @@
             echo "<p>No hay registros :(</p>";
         }
     ?>
-    <a href="index.php">Volver</a>
 </body>
 </html>
