@@ -34,5 +34,10 @@ function calculo($edad) {
             echo "<p>No hay registros :(</p>";
         }
     ?>
+    <a href="nuevoRegistro.php">Llenar nuevo registro</a>
+    <a href="modificarRegistro.php">Modificar un registro</a>
+    <a href="eliminarRegistro.php">Eliminar un registro</a>
+    <a href="datos.php">Mostrar lista de los registros</a>
+    <a href="index.php">Volver</a>
 </body>
 </html>
