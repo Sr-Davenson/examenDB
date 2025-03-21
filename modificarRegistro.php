@@ -5,13 +5,17 @@
     <title>Modificar</title>
 </head>
 <body>
-    <form action="insertar.php" method="post">
+    <form action="modificar.php" method="post">
                     <fieldset>
                         <legend>Modificar Registro:</legend>
                         <div>
                             <p>Ingresa el nombre de la persona que quieres modificar la informacion</p>
                             <label>Nombre:</label>
-                            <input type="text" name="nombre" placeholder="Ingresa tu nombre" require>
+                            <input type="text" name="nombreDB" placeholder="Ingresa tu nombre" required>
+                            <label>Email:</label>
+                            <input type="email" name="emailDB" placeholder="Ingresa tu correo" required>
+                            <label>Edad: </label>
+                            <input type="number" name="edadDB" min="1" placeholder="ingresa tu edad" required>
                             <br>
                             <p>A continuacion ingresa los nuevos datos</p>
                             <label>Nombre:</label>

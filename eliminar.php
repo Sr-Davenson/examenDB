@@ -1,14 +1,30 @@
 <?php
     include "bases.php";
-    $sqlSelect ="DELETE FROM personas WHERE nombre ='nombre'";
-    $sqlSelect .= "('nombre')";
-    $resultadosSQL = $conexDB->query($sqlSelect);
-if(empty($resultadosSQL)==true){
-    echo "<br> Eliminado exitosamente <br>";
-}else{
-    echo "<br>No fue posible Eliminar la informacion<br>";
 
-}?>
+    if (isset($_POST['nombre']) && !empty($_POST['nombre'])) {
+        $nombre = $_POST['nombre'];
+
+        // Uso de declaración preparada para evitar inyección SQL
+        $sql = "DELETE FROM personas WHERE nombre = ?";
+        $stmt = $conexDB->prepare($sql);
+
+        if ($stmt) {
+            // Vinculamos el parámetro
+            $stmt->bind_param("s", $nombre); // Tipo string
+            if ($stmt->execute()) {
+                echo "<br> Eliminado exitosamente <br>";
+            } else {
+                echo "<br>No fue posible eliminar la información: " . $stmt->error . "<br>";
+            }
+            $stmt->close();
+        } else {
+            echo "<br>Error al preparar la consulta SQL: " . $conexDB->error . "<br>";
+        }
+    } else {
+        echo "<br>Error: El campo 'nombre' está vacío o no fue enviado.<br>";
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

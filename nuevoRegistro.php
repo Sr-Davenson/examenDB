@@ -10,13 +10,13 @@
                     <legend>Nuevo Registro:</legend>
                     <div>
                         <label>Nombre:</label>
-                        <input type="text" name="nombreDB" placeholder="Ingresa tu nombre" require>
+                        <input type="text" name="nombreDB" placeholder="Ingresa tu nombre" required>
                         <br>
                         <label>Email:</label>
-                        <input type="email" name="emailDB" placeholder="Ingresa tu correo" require>
+                        <input type="email" name="emailDB" placeholder="Ingresa tu correo" required>
                         <br>
                         <label>Edad: </label>
-                        <input type="number" name="edadDB" min="1" placeholder="ingresa tu edad" require>
+                        <input type="number" name="edadDB" min="1" placeholder="ingresa tu edad" required>
                     </div>
                 </fieldset>
                 <button type="submit">Enviar</button>
