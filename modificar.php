@@ -1,26 +1,24 @@
+<?php
+    include "bases.php";
+    $sqlSelect ="UPDATE `personas` SET `nombre`='[nombreNew]',`email`='[emailNew]',`edad`='[edadNew]' WHERE 'nombre'='nombre'";
+    $sqlSelect .= "('nombreNew', 'emailNew', 'edadNew')";
+    $resultadosSQL = $conexDB->query($sqlSelect);
+if(empty($resultadosSQL)==true){
+    echo "<br> Actualizar exitosamente <br>";
+}else{
+    echo "<br>No fue posible Actualizar la informacion<br>";
+
+}?>
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Modificar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
-    <form action="insertar.php" method="post">
-                    <fieldset>
-                        <legend>Modificar Registro:</legend>
-                        <div>
-                            <label>Nombre:</label>
-                            <input type="text" name="nombre" placeholder="Ingresa tu nombre" require>
-                            <br>
-                            <label>Email:</label>
-                            <input type="email" name="email" placeholder="Ingresa tu correo" require>
-                            <br>
-                            <label>Edad: </label>
-                            <input type="number" name="edad" min="1" placeholder="ingresa tu edad" require>
-                        </div>
-                    </fieldset>
-                    <button type="submit">Enviar</button>
-                </form>
-    <a href="index.php">Volver</a>
+    <a href="nuevoRegistro.php">Llenar nuevo registro</a>
+    <a href="modificarRegistro.php">Modificar un registro</a>
+    <a href="index.php">Ir a Inicio</a>
 </body>
 </html>

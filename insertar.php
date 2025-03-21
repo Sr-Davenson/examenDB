@@ -3,7 +3,7 @@
     $sqlSelect ="insert into personas (nombre, email, edad) values ";
     $sqlSelect .= "('nombre', 'email', 'edad')";
     $resultadosSQL = $conexDB->query($sqlSelect);
-if(empty($resultadosSQL)==true){
+if(empty($resultadosSQL)==false){
     echo "<br> Guardado exitosamente <br>";
 }else{
     echo "<br>No fue posible guardar la informacion<br>";
@@ -17,7 +17,7 @@ if(empty($resultadosSQL)==true){
     <title>Document</title>
 </head>
 <body>
-    <a href="nuevoRegistro.php">Llenar otro registro</a>
+    <a href="nuevoRegistro.php">Llenar nuevo registro</a>
     <a href="index.php">Ir a Inicio</a>
 </body>
 </html>
