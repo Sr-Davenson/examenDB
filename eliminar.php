@@ -31,6 +31,9 @@
 </head>
 <body>
     <a href="nuevoRegistro.php">Llenar nuevo registro</a>
+    <a href="modificarRegistro.php">Modificar un registro</a>
+    <a href="eliminarRegistro.php">Eliminar un registro</a>
+    <a href="datos.php">Mostrar lista de los registros</a>
     <a href="index.php">Ir a Inicio</a>
 </body>
 </html>

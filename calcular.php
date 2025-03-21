@@ -1,6 +1,10 @@
 <?php
-function calculo(){
-    
+function calculo($edad) {
+    if ($edad < 18) {
+        return "Menor de edad";
+    } else {
+        return "Mayor de edad";
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -17,12 +21,13 @@ function calculo(){
 
         if ($resultadosSQL->num_rows > 0) {
             echo "<table>";
-            echo "<tr><th>Nombre</th><th>Email</th><th>Edad</th></tr>";
+            echo "<tr><th>Nombre</th><th>Email</th><th>Edad</th><th>Estado</th></tr>";
             while ($row = $resultadosSQL->fetch_assoc()) {
                 $nombre = htmlspecialchars($row['nombre']);
                 $email = htmlspecialchars($row['email']);
                 $edad = htmlspecialchars($row['edad']);
-                echo "<tr><td>$nombre</td><td>$email</td><td>$edad</td></tr>";
+                $estado = calculo($edad); //
+                echo "<tr><td>$nombre</td><td>$email</td><td>$edad</td><td>$estado</td></tr>";
             }
             echo "</table>";
         } else {

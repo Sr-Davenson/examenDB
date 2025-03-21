@@ -26,10 +26,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Nuevo Registro</title>
 </head>
 <body>
     <a href="nuevoRegistro.php">Llenar nuevo registro</a>
+    <a href="modificarRegistro.php">Modificar un registro</a>
+    <a href="eliminarRegistro.php">Eliminar un registro</a>
+    <a href="datos.php">Mostrar lista de los registros</a>
     <a href="index.php">Ir a Inicio</a>
 </body>
 </html>
