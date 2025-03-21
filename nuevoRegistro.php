@@ -5,7 +5,7 @@
     <title>Nuevo Registro</title>
 </head>
 <body>
-    <form action="bases.php" method="post">
+    <form action="insertar.php" method="post">
                 <fieldset>
                     <legend>Nuevo Registro:</legend>
                     <div>
